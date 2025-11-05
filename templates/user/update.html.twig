@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update user{% endblock %}
+
+{% block body %}
+
+    <h1>Update user</h1>
+
+    {{ form_row(form.email) }}
+    {{ form_row(form.username) }}
+    {{ form_row(form.bio) }}
+    {{ form_row(form.isVerified) }}
+    {{ form_row(form.submit) }}
+
+    <button>
+        <a href="{{ path( 'getUsers' ) }}">Cancel</a>
+    </button>
+{% endblock %}

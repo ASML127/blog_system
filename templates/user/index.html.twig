@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+    <h1>Users</h1>
+
+    <a href="{{ path( 'getArticles' ) }}">Go home</a>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Full name</th>
+                <th>Bio</th>
+                <th>Verified?</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+                <tr>
+                    <td>{{ user.email }}</td>
+                    <td>{{ user.username }}</td>
+                    <td>{{ user.getFullName() }}</td>
+                    <td>{{ user.bio }}</td>
+                    {% if user.isVerified %}
+                        <td>True</td>
+                    {% else %}
+                        <td>False</td>
+                    {% endif %}
+                    <td>
+                        <a href="{{ path( 'updateUser', { 'id' : user.id } ) }}">Update</a>
+                        <a href="{{ path( 'deleteUser', { 'id' : user.id } ) }}">Delete</a>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <button>
+        <a href="{{ path( 'addUser' ) }}">Add user</a>
+    </button>
+    <button>
+        <a href="{{ path( 'addArticle' ) }}">Create an article</a>
+    </button>
+{% endblock %}

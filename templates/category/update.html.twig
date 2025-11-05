@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Update{% endblock %}
+
+{% block body %}
+
+    <h1>Update category</h1>
+
+    {{ form(form) }}
+
+    <button>
+        <a href="{{ path( 'getCategories' ) }}">Cancel</a>
+    </button>
+
+{% endblock %}

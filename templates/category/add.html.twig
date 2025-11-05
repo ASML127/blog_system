@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Insert{% endblock %}
+
+{% block body %}
+
+    <h1>Insert category</h1>
+
+    {{ form(form) }}
+
+    <button>
+        <a href="{{ path( 'getCategories' ) }}">Cancel</a>
+    </button>
+
+{% endblock %}

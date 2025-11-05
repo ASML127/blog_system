@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categories{% endblock %}
+
+{% block body %}
+
+    <h1>Categories</h1>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Color</th>
+            <th>Active?</th>
+            <th>What to do?</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in categories %}
+
+            <tr>
+                <td>{{ category.name }}</td>
+                <td>{{ category.description }}</td>
+                <td>{{ category.color }}</td>
+                {% if category.isActive %}
+                    <td>True</td>
+                {% else %}
+                    <td>False</td>
+                {% endif %}
+                <td><a href="{{ path( 'updateCategory', { 'id' : category.id } ) }}">Update</a></td>
+                <td><a href="{{ path( 'deleteCategory', { 'id' : category.id } ) }}">Delete</a></td>
+            </tr>
+
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <span>
+        <button>
+            <a href="{{ path( 'addCategory' ) }}">Insert Category</a>
+        </button>
+
+        <button>
+            <a href="{{ path( 'getArticles' ) }}">Go home</a>
+        </button>
+    </span>
+
+{% endblock %}

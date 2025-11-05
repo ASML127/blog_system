@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add user{% endblock %}
+
+{% block body %}
+
+    <h1>Add user</h1>
+
+    {{ form(form) }}
+
+    <button>
+        <a href="{{ path( 'getUsers' ) }}">Cancel</a>
+    </button>
+{% endblock %}

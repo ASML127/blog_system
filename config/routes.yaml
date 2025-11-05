@@ -1,0 +1,56 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+#Routes for articles
+getArticles:
+  path: /
+  controller: App\Controller\ArticleController::getArticles
+
+addArticle:
+  path: /add_article
+  controller: App\Controller\ArticleController::addArticle
+
+updateArticle:
+  path: /update_article/{id}
+  controller: App\Controller\ArticleController::updateArticle
+
+deleteArticle:
+  path: /delete_article/{id}
+  controller: App\Controller\ArticleController::deleteArticle
+
+#Routes for categories
+getCategories:
+  path: /categories
+  controller: App\Controller\CategoryController::getCategories
+
+updateCategory:
+  path: /update_category/{id}
+  controller: App\Controller\CategoryController::updateCategory
+
+deleteCategory:
+  path: /delete_category/{id}
+  controller: App\Controller\CategoryController::deleteCategory
+
+addCategory:
+  path: /add_category
+  controller: App\Controller\CategoryController::addCategory
+
+#Routes for users
+getUsers:
+  path: /users
+  controller: App\Controller\UserController::getUsers
+
+addUser:
+  path: /add_user
+  controller: App\Controller\UserController::addUser
+
+updateUser:
+  path: /update_user/{id}
+  controller: App\Controller\UserController::updateUser
+
+deleteUser:
+  path: /delete_user/{id}
+  controller: App\Controller\UserController::deleteUser
