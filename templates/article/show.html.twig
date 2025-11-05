@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Add article{% endblock %}
+
+{% block body %}
+
+    <h1>Title: {{ article.title }}</h1>
+
+
+    <h2>Content: {{ article.content }}</h2>
+    <h3>Published: {{ article.publishedAt | date('Y-m-d') }}</h3>
+    <h3>Category: {{ article.category.name }}</h3>
+    <p>Views: {{ article.viewCount }}</p>
+    <p>Likes: {{ article.likeCount }}</p>
+    <p>Comments: {{ article.commentCount }}</p>
+    <h3>User: {{ article.author.username }}</h3>
+{#    {{ form(form) }}#}
+
+    <a href="{{ path('getArticles') }}">Go back</a>
+{% endblock %}

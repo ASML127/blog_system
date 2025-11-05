@@ -32,6 +32,13 @@ final class ArticleController extends AbstractController
         ]);
     }
 
+    public function getArticle(Request $request,int $id): Response {
+        $article = $this->em->getRepository(Article::class)->find($id);
+        return $this->render('article/show.html.twig', [
+            'article' => $article
+        ]);
+    }
+
     public function addArticle(Request $request): Response {
         $article = new Article();
         $form = $this->createForm(ArticleType::class, $article);

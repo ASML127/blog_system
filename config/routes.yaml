@@ -9,6 +9,10 @@ getArticles:
   path: /
   controller: App\Controller\ArticleController::getArticles
 
+getArticle:
+  path: /get_article/{id}
+  controller: App\Controller\ArticleController::getArticle
+
 addArticle:
   path: /add_article
   controller: App\Controller\ArticleController::addArticle
