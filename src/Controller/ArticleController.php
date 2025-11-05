@@ -41,6 +41,7 @@ final class ArticleController extends AbstractController
             $article->setLikeCount(0);
             $article->setViewCount(0);
             $article->setSlug(strtolower(str_replace(' ', '-', $article->getTitle())));
+            $article->setPublishedAt(new \DateTime());
             $article->setCreateAt(new \DateTime());
             $article->setUpdatedAt(new \DateTime());
             $this->em->persist($article);

@@ -53,30 +53,6 @@ class ArticleType extends AbstractType
                     'no' => 'No',
                 ]
             ])
-            ->add('viewCount', IntegerType::class, [
-                'label' => 'View count',
-                'attr' => [
-                    'autocomplete' => 'off'
-                ]
-            ])
-            ->add('likeCount', IntegerType::class, [
-                'label' => 'Likes count',
-                'attr' => [
-                    'autocomplete' => 'off'
-                ]
-            ])
-            ->add('commentCount', IntegerType::class, [
-                'label' => 'Comment count',
-                'attr' => [
-                    'autocomplete' => 'off'
-                ]
-            ])
-            ->add('publishedAt', DateType::class, [
-                'widget' => 'single_text',
-                'format' => 'yyyy-MM-dd',
-            ])
-//            ->add('createAt')
-//            ->add('updatedAt')
             ->add('author', EntityType::class, [
                 'class' => User::class,
                 'choice_label' => 'username',
