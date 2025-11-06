@@ -42,6 +42,7 @@ final class ArticleController extends AbstractController
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
         if ($form->isSubmitted() && $form->isValid()) {
+            $article->setAuthor($this->getUser());
             $article->setCommentCount(0);
             $article->setLikeCount(0);
             $article->setViewCount(0);

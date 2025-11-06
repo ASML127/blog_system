@@ -6,8 +6,8 @@
 
     <h1>Articles</h1>
 
-{#    <a href="{{ path( 'getCategories' ) }}">See categories</a>#}
-{#    <a href="{{ path( 'getUsers' ) }}">See users</a>#}
+    <a href="{{ path( 'getCategories' ) }}">See categories</a>
+    <a href="{{ path( 'getUsers' ) }}">See users</a>
     <a href="{{ path('app_logout') }}">Logout</a>
 
     <table>
@@ -24,7 +24,7 @@
                 <th>Full name</th>
                 <th>Username</th>
 {#                <th>Email</th>#}
-{#                <th>Interactions</th>#}
+                <th>Interactions</th>
             </tr>
         </thead>
         <tbody>
@@ -44,10 +44,10 @@
                     <td>{{ article.author.getFullName() }}</td>
                     <td>{{ article.author.username }}</td>
 {#                    <td>{{ article.author.email }}</td>#}
-{#                    <td>#}
-{#                        <a href="{{ path( 'updateArticle', { 'id' : article.id } ) }}">Update</a>#}
-{#                        <a href="{{ path( 'deleteArticle', { 'id' : article.id } ) }}">Delete</a>#}
-{#                    </td>#}
+                    <td>
+                        <a href="{{ path( 'updateArticle', { 'id' : article.id } ) }}">Update</a>
+                        <a href="{{ path( 'deleteArticle', { 'id' : article.id } ) }}">Delete</a>
+                    </td>
                 </tr>
 
             {% endfor %}

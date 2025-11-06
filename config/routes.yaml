@@ -63,3 +63,8 @@ updateUser:
 deleteUser:
   path: /delete_user/{id}
   controller: App\Controller\UserController::deleteUser
+
+#Routes for likes
+addLike:
+  path: /like
+  controller: App\Controller\ArticleLikeController::addLike

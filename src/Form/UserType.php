@@ -13,6 +13,8 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Validator\Constraints\Length;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 class UserType extends AbstractType
 {
@@ -25,15 +27,21 @@ class UserType extends AbstractType
                     'placeholder' => 'Email',
                     'autocomplete' => 'off',
                     'require' => true,
+                ],
+                'constraints' => [
+                    new NotBlank()
                 ]
             ])
-//            ->add('roles')
             ->add('password', PasswordType::class, [
                 'label' => 'Password',
                 'attr' => [
                     'placeholder' => 'Password',
                     'autocomplete' => 'off',
                     'require' => true,
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 8])
                 ]
             ])
             ->add('username', TextType::class, [
@@ -42,6 +50,10 @@ class UserType extends AbstractType
                     'placeholder' => 'Username',
                     'autocomplete' => 'off',
                     'require' => true,
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 5])
                 ]
             ])
             ->add('firstName',TextType::class, [
@@ -50,6 +62,10 @@ class UserType extends AbstractType
                     'placeholder' => 'First Name',
                     'autocomplete' => 'off',
                     'require' => true,
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 5])
                 ]
             ])
             ->add('lastName',TextType::class, [
@@ -58,10 +74,13 @@ class UserType extends AbstractType
                     'placeholder' => 'Last Name',
                     'autocomplete' => 'off',
                     'require' => true,
+                ],
+                'constraints' => [
+                    new NotBlank(),
+                    new Length(['min' => 5])
                 ]
             ])
             ->add('bio', TextareaType::class)
-//            ->add('avatar')
             ->add('isVerified', ChoiceType::class, [
                 'label' => 'Is Verified',
                 'choices' => [
@@ -70,13 +89,12 @@ class UserType extends AbstractType
                 ],
                 'attr' => [
                     'require' => true,
+                ],
+                'constraints' => [
+                    new NotBlank()
                 ]
             ])
-//            ->add('createdAt')
-//            ->add('updatedAt')
-//            ->add('lastLogin')
             ->add('submit', SubmitType::class, ['label' => 'Register']);
-        ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
