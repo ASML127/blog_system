@@ -8,10 +8,12 @@ controllers:
 getArticles:
   path: /
   controller: App\Controller\ArticleController::getArticles
+  methods: GET
 
 getArticle:
   path: /get_article/{id}
   controller: App\Controller\ArticleController::getArticle
+  methods: GET
 
 addArticle:
   path: /add_article
@@ -29,10 +31,12 @@ deleteArticle:
 getCategories:
   path: /categories
   controller: App\Controller\CategoryController::getCategories
+  methods: GET
 
 updateCategory:
   path: /update_category/{id}
   controller: App\Controller\CategoryController::updateCategory
+  methods: GET
 
 deleteCategory:
   path: /delete_category/{id}
@@ -46,6 +50,7 @@ addCategory:
 getUsers:
   path: /users
   controller: App\Controller\UserController::getUsers
+  methods: GET
 
 addUser:
   path: /add_user
