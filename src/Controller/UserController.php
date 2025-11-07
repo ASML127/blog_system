@@ -8,12 +8,11 @@ use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Routing\Attribute\Route;
 
 final class UserController extends AbstractController
 {
 
-    private $em;
+    private EntityManagerInterface $em;
 
     /**
      * @param EntityManagerInterface $em
@@ -59,7 +58,7 @@ final class UserController extends AbstractController
         ]);
     }
 
-    public function deleteUser(Request $request, int $id): Response {
+    public function deleteUser(int $id): Response {
         $user = $this->em->getRepository(User::class)->find($id);
         $this->em->remove($user);
         $this->em->flush();

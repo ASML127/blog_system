@@ -12,7 +12,7 @@
     <h3>Category: {{ article.category.name }}</h3>
     <p>Views: {{ article.viewCount }}</p>
     <p>Likes: {{ article.likeCount }}</p>
-{#    <a href="{{ path( 'addLike' ) }}">Like +1</a>#}
+{#    <a href="{{ path( 'addLike', {'id': article.id} ) }}">Like +1</a>#}
     <p>Comments: {{ article.commentCount }}</p>
     <h3>User: {{ article.author.username }}</h3>
 {#    {{ form(form) }}#}

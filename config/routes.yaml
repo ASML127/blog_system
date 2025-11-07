@@ -66,5 +66,5 @@ deleteUser:
 
 #Routes for likes
 addLike:
-  path: /like
+  path: /like/{id}
   controller: App\Controller\ArticleLikeController::addLike

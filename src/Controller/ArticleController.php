@@ -12,7 +12,7 @@ use Symfony\Component\HttpFoundation\Response;
 final class ArticleController extends AbstractController
 {
 
-    private $em;
+    private EntityManagerInterface $em;
 
     /**
      * @param EntityManagerInterface $em
@@ -30,7 +30,7 @@ final class ArticleController extends AbstractController
         ]);
     }
 
-    public function getArticle(Request $request,int $id): Response {
+    public function getArticle(int $id): Response {
         $article = $this->em->getRepository(Article::class)->find($id);
         return $this->render('article/show.html.twig', [
             'article' => $article

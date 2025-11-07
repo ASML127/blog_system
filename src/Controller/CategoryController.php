@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Response;
 
 final class CategoryController extends AbstractController
 {
-    private $em;
+    private EntityManagerInterface $em;
 
     /**
      * @param EntityManagerInterface $em

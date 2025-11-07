@@ -194,7 +194,7 @@ class Article
 
     public function setLikeCount(int $likeCount): static
     {
-        $this->likeCount = $likeCount;
+        $this->likeCount += $likeCount;
 
         return $this;
     }
